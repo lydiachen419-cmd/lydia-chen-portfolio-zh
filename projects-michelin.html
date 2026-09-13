@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michelin Marketing Analytics — 米其林餐厅评级因素分析 — 陈秀涵 Lydia Chen</title>
+<meta name="description" content="18,422 家米其林餐厅的 LLM 提取与 PCA 分析：星级差距在执行，不在氛围。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%93%8A</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-logo" href="index.html">陈秀涵 Lydia</a>
+    <div class="nav-right">
+      <nav>
+        <ul class="nav-menu">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="work.html">工作经历</a></li>
+        <li><a href="projects.html" class="is-active">项目经历</a></li>
+        <li><a href="about.html">关于我</a></li>
+        </ul>
+      </nav>
+      <a class="nav-lang" href="https://lydiachen419-cmd.github.io/lydia-chen-portfolio/">EN</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="detail-head">
+    <div class="wrap">
+      <a class="back-link" href="projects.html">返回项目经历</a>
+      <h1>Michelin Marketing Analytics — 米其林餐厅评级因素分析</h1>
+      <ul class="tags">
+        <li>数据pipeline设计</li>
+        <li>NLP/LLM提取</li>
+        <li>PCA分析</li>
+        <li>方法论迭代</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <figure class="detail-hero"><img src="assets/michelin/perceptual-map.png" alt="米其林餐厅星级感知地图"></figure>
+  </div>
+
+  <article class="wrap detail-body">
+    <section class="chapter">
+      <div class="skillset">
+        <span class="skillset-label">Skillset</span>
+        <ul class="tags"><li>数据pipeline设计</li><li>NLP/LLM提取</li><li>PCA分析</li><li>方法论迭代</li></ul>
+      </div>
+
+      <div class="prose">
+        <p>19个国家18,422家米其林餐厅，三星和零星之间到底差在哪？</p>
+        <p>我设计了整套分析的taxonomy和提取pipeline。最初试了情感评分，发现走不通——米其林评审员从不写负面评价，sentiment分析直接失效——于是整个方法论转向了evidence-only提取加PCA降维。最终一个主成分（“实用价值到烹饪技艺”）解释了约68.5%的方差。结论：区分米其林层级的是食物和服务执行，不是氛围，不是价格。</p>
+      </div>
+
+      <details class="disclosure">
+        <summary>展开看细节</summary>
+        <div class="disclosure-body"><p>使用 GPT-4.1-mini，设计 strict evidence-only prompt。原始 sentiment 方案因数据特性失效后 pivot 到 taxonomy-based extraction，单主成分解释 68.5% 方差。</p></div>
+      </details>
+
+      <div class="media-row">
+        <figure class="shot"><img src="assets/michelin/data-overview.png" alt="18,422 家米其林餐厅数据总览" loading="lazy"><figcaption>数据集 — 19 个国家、18,422 家餐厅</figcaption></figure>
+        <figure class="shot"><img src="assets/michelin/taxonomy-extraction.png" alt="属性 taxonomy 与 LLM 提取设计" loading="lazy"><figcaption>我设计的 taxonomy 与 evidence-only 提取逻辑</figcaption></figure>
+        <figure class="shot"><img src="assets/michelin/pca.png" alt="PCA 分析结果" loading="lazy"><figcaption>PCA — 单一主成分解释约 68.5% 的方差</figcaption></figure>
+      </div>
+
+      <ul class="link-list">
+        <li>
+          <a href="assets/michelin/michelin-analysis.pdf">分析 presentation
+            <span class="link-note">PDF — taxonomy、PCA 与感知地图</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://drive.google.com/drive/folders/1P9UM2iPpLMjSWZ-BCuNPsp1yfUKhINB3" target="_blank" rel="noopener">完整分析文档
+            <span class="link-note">Google Drive — 分析过程与代码</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </article>
+
+  <div class="wrap">
+    <nav class="next-nav">
+      <a href="projects.html">全部项目</a>
+      <a href="projects-stylemuse.html">下一个：Style Muse</a>
+    </nav>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p class="footer-note">哥伦比亚大学商学院 Marketing Science 硕士，预计 2027 年 2 月毕业</p>
+    <div class="footer-links">
+      <a href="mailto:lydia_chenxiuhan@163.com">lydia_chenxiuhan@163.com</a>
+      <a href="https://linkedin.com/in/xiuhan-lydia-chen" target="_blank" rel="noopener">linkedin.com/in/xiuhan-lydia-chen</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
