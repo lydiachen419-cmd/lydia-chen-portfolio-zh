@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Michelin Marketing Analytics — 米其林餐厅评级因素分析 — 陈秀涵 Lydia Chen</title>
+<title>Michelin Marketing Analytics — 米其林餐厅评级因素分析 — 陈修菡</title>
 <meta name="description" content="18,422 家米其林餐厅的 LLM 提取与 PCA 分析：星级差距在执行，不在氛围。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%93%8A</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +15,14 @@
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="nav-logo" href="index.html">陈秀涵 Lydia</a>
+    <a class="nav-logo" href="index.html">陈修菡</a>
     <div class="nav-right">
       <nav>
         <ul class="nav-menu">
-        <li><a href="index.html">首页</a></li>
-        <li><a href="work.html">工作经历</a></li>
-        <li><a href="projects.html" class="is-active">项目经历</a></li>
-        <li><a href="about.html">关于我</a></li>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="work.html">工作经历</a></li>
+          <li><a href="projects.html" class="is-active">项目经历</a></li>
+          <li><a href="about.html">关于我</a></li>
         </ul>
       </nav>
       <a class="nav-lang" href="https://lydiachen419-cmd.github.io/lydia-chen-portfolio/">EN</a>
@@ -35,6 +35,7 @@
     <div class="wrap">
       <a class="back-link" href="projects.html">返回项目经历</a>
       <h1>Michelin Marketing Analytics — 米其林餐厅评级因素分析</h1>
+      <p class="detail-role">哥伦比亚商学院课程项目 · 负责 taxonomy 设计和数据提取 pipeline</p>
       <ul class="tags">
         <li>数据pipeline设计</li>
         <li>NLP/LLM提取</li>
@@ -56,13 +57,14 @@
       </div>
 
       <div class="prose">
-        <p>19个国家18,422家米其林餐厅，三星和零星之间到底差在哪？</p>
-        <p>我设计了整套分析的taxonomy和提取pipeline。最初试了情感评分，发现走不通——米其林评审员从不写负面评价，sentiment分析直接失效——于是整个方法论转向了evidence-only提取加PCA降维。最终一个主成分（“实用价值到烹饪技艺”）解释了约68.5%的方差。结论：区分米其林层级的是食物和服务执行，不是氛围，不是价格。</p>
+        <p>19个国家18,422家米其林餐厅，三星和零星之间到底差在哪。</p>
+        <p>我设计了evidence-only提取prompt，用GPT-4.1-mini从米其林评审员描述中批量提取属性标签。最初试了情感评分，发现走不通，米其林评审员从不写负面评价，整个方法论转向taxonomy-based提取加PCA降维。</p>
+        <p>最终一个PCA主成分解释了约68.5%的方差。区分米其林层级的是食物和服务执行，不是氛围，不是价格。回归模型进一步验证：清洁度是准入门槛，食物和服务是持续杠杆，氛围和便利性在高星评级中反而呈现微弱的负向关联。</p>
       </div>
 
       <details class="disclosure">
         <summary>展开看细节</summary>
-        <div class="disclosure-body"><p>使用 GPT-4.1-mini，设计 strict evidence-only prompt。原始 sentiment 方案因数据特性失效后 pivot 到 taxonomy-based extraction，单主成分解释 68.5% 方差。</p></div>
+        <div class="disclosure-body"><p>方法论迭代：情感评分因数据特性失效后pivot至taxonomy-based提取。PCA主成分（68.5%方差）+ 文本回归双重验证，回归模型显示清洁度为threshold效应，食物/服务为持续正向杠杆，氛围/便利性呈微弱负向关联。</p></div>
       </details>
 
       <div class="media-row">
@@ -70,6 +72,28 @@
         <figure class="shot"><img src="assets/michelin/taxonomy-extraction.png" alt="属性 taxonomy 与 LLM 提取设计" loading="lazy"><figcaption>我设计的 taxonomy 与 evidence-only 提取逻辑</figcaption></figure>
         <figure class="shot"><img src="assets/michelin/pca.png" alt="PCA 分析结果" loading="lazy"><figcaption>PCA — 单一主成分解释约 68.5% 的方差</figcaption></figure>
       </div>
+
+      <section class="highlights">
+        <h3 class="highlights-title">建议展示的关键页</h3>
+        <div class="highlight-grid">
+          <figure class="highlight">
+            <div class="img-ph ph-16x10" data-asset="assets/michelin/highlight-pca-variance.png">assets/michelin/highlight-pca-variance.png</div>
+            <figcaption>PCA Explained Variance — PC1 解释 68.5%</figcaption>
+          </figure>
+          <figure class="highlight">
+            <div class="img-ph ph-16x10" data-asset="assets/michelin/highlight-perceptual-map.png">assets/michelin/highlight-perceptual-map.png</div>
+            <figcaption>Perceptual Map — 星级定位感知图</figcaption>
+          </figure>
+          <figure class="highlight">
+            <div class="img-ph ph-16x10" data-asset="assets/michelin/highlight-regression.png">assets/michelin/highlight-regression.png</div>
+            <figcaption>Text-Based Regression 结果 — Cleanliness 作为 threshold 效应</figcaption>
+          </figure>
+          <figure class="highlight">
+            <div class="img-ph ph-16x10" data-asset="assets/michelin/highlight-attribute-loading.png">assets/michelin/highlight-attribute-loading.png</div>
+            <figcaption>Attribute Loading 表</figcaption>
+          </figure>
+        </div>
+      </section>
 
       <ul class="link-list">
         <li>
