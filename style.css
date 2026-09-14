@@ -553,7 +553,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--serif);
   font-size: clamp(1.15rem, 2.2vw, 1.42rem);
   line-height: 1.5;
-  max-width: 30em;
+  max-width: 46em;
   margin-bottom: clamp(40px, 6vh, 64px);
   padding-left: 22px;
   border-left: 2px solid var(--accent-2);
@@ -591,9 +591,17 @@ img { max-width: 100%; display: block; }
 .chapter .tags { margin-bottom: 24px; }
 
 .prose p {
-  max-width: var(--measure);
+  max-width: none;
   margin-bottom: 1.15em;
 }
+
+.prose h3 {
+  font-size: 1.2rem;
+  margin: 1.9em 0 0.55em;
+  color: var(--ink);
+}
+
+.prose h3:first-child { margin-top: 0; }
 
 .prose p:last-child { margin-bottom: 0; }
 
@@ -608,7 +616,7 @@ img { max-width: 100%; display: block; }
 
 .media-row figure { margin: 0; }
 
-.shot { flex: 1 1 320px; min-width: 0; }
+.shot { flex: 1 1 430px; min-width: 0; }
 
 .shot img {
   width: 100%;
@@ -671,7 +679,6 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
   gap: 2px;
-  max-width: var(--measure);
 }
 
 .link-list a {
@@ -964,55 +971,6 @@ img { max-width: 100%; display: block; }
 .footer-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
 /* ===========================================================
-   Disclosure — 展开看细节
-=========================================================== */
-.disclosure {
-  margin-top: 26px;
-  max-width: var(--measure);
-  border-top: 1px solid var(--line-soft);
-  padding-top: 16px;
-}
-
-.disclosure > summary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  list-style: none;
-  font-size: 0.92rem;
-  color: var(--accent);
-  padding: 2px 0;
-  transition: color 0.2s ease;
-}
-
-.disclosure > summary::-webkit-details-marker { display: none; }
-
-.disclosure > summary::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: rotate(-45deg);
-  transition: transform 0.24s ease;
-}
-
-.disclosure[open] > summary::before { transform: rotate(45deg); }
-
-.disclosure > summary:hover { color: var(--accent-2); }
-
-.disclosure-body {
-  margin-top: 14px;
-  padding: 18px 20px;
-  background: var(--bg-card);
-  border-radius: 10px;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.disclosure-body p + p { margin-top: 0.9em; }
-
-/* ===========================================================
    Skillset line
 =========================================================== */
 .skillset {
@@ -1138,25 +1096,27 @@ img { max-width: 100%; display: block; }
 
 .highlight-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 26px;
+}
+
+@media (max-width: 700px) {
+  .highlight-grid { grid-template-columns: 1fr; }
 }
 
 .highlight { margin: 0; }
 
 .highlight img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
   border: 1px solid var(--line-soft);
   border-radius: 8px;
   background: var(--bg-sunk);
 }
 
 .highlight figcaption {
-  margin-top: 9px;
-  font-size: 0.8rem;
-  line-height: 1.55;
+  margin-top: 11px;
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: var(--muted);
 }
