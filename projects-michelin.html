@@ -46,7 +46,7 @@
   </section>
 
   <div class="wrap">
-    <figure class="detail-hero"><img src="assets/michelin/perceptual-map.png" alt="米其林餐厅星级感知地图"></figure>
+    <figure class="detail-hero"><img src="assets/michelin/taxonomy-extraction.png" alt="属性 taxonomy 与 LLM 提取设计"></figure>
   </div>
 
   <article class="wrap detail-body">
@@ -67,29 +67,23 @@
         <div class="disclosure-body"><p>方法论迭代：情感评分因数据特性失效后pivot至taxonomy-based提取。PCA主成分（68.5%方差）+ 文本回归双重验证，回归模型显示清洁度为threshold效应，食物/服务为持续正向杠杆，氛围/便利性呈微弱负向关联。</p></div>
       </details>
 
-      <div class="media-row">
-        <figure class="shot"><img src="assets/michelin/data-overview.png" alt="18,422 家米其林餐厅数据总览" loading="lazy"><figcaption>数据集 — 19 个国家、18,422 家餐厅</figcaption></figure>
-        <figure class="shot"><img src="assets/michelin/taxonomy-extraction.png" alt="属性 taxonomy 与 LLM 提取设计" loading="lazy"><figcaption>我设计的 taxonomy 与 evidence-only 提取逻辑</figcaption></figure>
-        <figure class="shot"><img src="assets/michelin/pca.png" alt="PCA 分析结果" loading="lazy"><figcaption>PCA — 单一主成分解释约 68.5% 的方差</figcaption></figure>
-      </div>
-
       <section class="highlights">
         <h3 class="highlights-title">建议展示的关键页</h3>
         <div class="highlight-grid">
           <figure class="highlight">
-            <div class="img-ph ph-16x10" data-asset="assets/michelin/highlight-pca-variance.png">assets/michelin/highlight-pca-variance.png</div>
+            <img src="assets/michelin/pca.png" alt="PCA 分析结果与解释方差" loading="lazy">
             <figcaption>PCA Explained Variance — PC1 解释 68.5%</figcaption>
           </figure>
           <figure class="highlight">
-            <div class="img-ph ph-16x10" data-asset="assets/michelin/highlight-perceptual-map.png">assets/michelin/highlight-perceptual-map.png</div>
+            <img src="assets/michelin/perceptual-map.png" alt="米其林餐厅星级感知地图" loading="lazy">
             <figcaption>Perceptual Map — 星级定位感知图</figcaption>
           </figure>
           <figure class="highlight">
-            <div class="img-ph ph-16x10" data-asset="assets/michelin/highlight-regression.png">assets/michelin/highlight-regression.png</div>
+            <img src="assets/michelin/regression.png" alt="文本回归结果" loading="lazy">
             <figcaption>Text-Based Regression 结果 — Cleanliness 作为 threshold 效应</figcaption>
           </figure>
           <figure class="highlight">
-            <div class="img-ph ph-16x10" data-asset="assets/michelin/highlight-attribute-loading.png">assets/michelin/highlight-attribute-loading.png</div>
+            <img src="assets/michelin/attribute-loading.png" alt="PCA 属性载荷表" loading="lazy">
             <figcaption>Attribute Loading 表</figcaption>
           </figure>
         </div>

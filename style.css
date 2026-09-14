@@ -1144,9 +1144,14 @@ img { max-width: 100%; display: block; }
 
 .highlight { margin: 0; }
 
-.highlight .img-ph {
-  font-size: 0.68rem;
-  padding: 8px;
+.highlight img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  background: var(--bg-sunk);
 }
 
 .highlight figcaption {
