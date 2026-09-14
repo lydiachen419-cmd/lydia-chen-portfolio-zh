@@ -1104,6 +1104,9 @@ img { max-width: 100%; display: block; }
   .highlight-grid { grid-template-columns: 1fr; }
 }
 
+/* a dense slide that needs the whole row to stay readable */
+.highlight-wide { grid-column: 1 / -1; }
+
 .highlight { margin: 0; }
 
 .highlight img {
