@@ -1123,3 +1123,32 @@ img { max-width: 100%; display: block; }
   line-height: 1.6;
   color: var(--muted);
 }
+
+/* Compact STAR narratives, aligned with the slide width. */
+.star-story { margin-top: 28px; }
+.star-row { display: grid; grid-template-columns: 88px minmax(0,1fr); gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line-soft); }
+.prose.star-story .star-row h3 { font-family: var(--sans); font-size: .88rem; color: var(--muted); margin: 3px 0 0; }
+.prose.star-story .star-row p { margin: 0; }
+.star-row:last-child { border-bottom: 0; }
+.star-row:last-child h3 { color: var(--accent); }
+@media(max-width:560px) { .star-row { grid-template-columns: 1fr; gap: 7px; } }
+
+.orim-cover { display:flex; align-items:center; padding:32px; background:var(--bg-card); color:var(--accent); font-family:var(--serif); font-size:2rem; }
+.automation-flow { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; padding-left:24px; margin-top:24px; }
+.automation-flow p { color:var(--muted); margin-top:8px; }
+@media(max-width:560px) { .automation-flow { grid-template-columns:1fr; } }
+
+.manual-sheet { background:var(--bg-card); padding:clamp(20px,4vw,44px); margin:24px 0; border:1px solid var(--line); }
+.manual-sheet h4 { margin:24px 0 12px; font-size:1.15rem; }
+.manual-kicker,.evidence-note { color:var(--muted); font-size:.88rem; }
+.manual-table { overflow-x:auto; margin-top:24px; }
+.manual-table table { width:100%; border-collapse:collapse; text-align:left; font-size:.9rem; }
+.manual-table th,.manual-table td { padding:12px; border-bottom:1px solid var(--line); vertical-align:top; }
+.redacted-config span { display:inline-block; background:var(--ink); color:var(--bg); padding:2px 10px; font-size:.8rem; }
+
+/* Homepage portrait alongside the introduction. */
+.hero-intro-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,300px); gap:clamp(32px,5vw,64px); align-items:center; }
+.hero-copy { min-width:0; }
+.hero-portrait { margin:0; }
+.hero-portrait img { display:block; width:100%; height:auto; border-radius:12px; border:1px solid var(--line-soft); }
+@media(max-width:760px) { .hero-intro-grid { grid-template-columns:1fr; gap:32px; } .hero-portrait { width:min(100%,280px); } }

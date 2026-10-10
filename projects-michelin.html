@@ -56,11 +56,12 @@
         <ul class="tags"><li>数据pipeline设计</li><li>NLP/LLM提取</li><li>PCA分析</li><li>方法论迭代</li></ul>
       </div>
 
-      <div class="prose">
-        <p>19个国家18,422家米其林餐厅，三星和零星之间到底差在哪。</p>
-        <p>我设计了evidence-only提取prompt，用GPT-4.1-mini从米其林评审员描述中批量提取属性标签。最初试了情感评分，发现走不通，米其林评审员从不写负面评价，整个方法论转向taxonomy-based提取加PCA降维。</p>
-        <p>最终一个PCA主成分解释了约68.5%的方差。区分米其林层级的是食物和服务执行，不是氛围，不是价格。回归模型进一步验证：清洁度是准入门槛，食物和服务是持续杠杆，氛围和便利性在高星评级中反而呈现微弱的负向关联。</p>
-      </div>
+      <div class="prose star-story">
+<div class="star-row"><h3>背景 S</h3><p>19个国家18,422家餐厅的评审描述是非结构化文本，难以直接比较星级差异。</p></div>
+<div class="star-row"><h3>目标 T</h3><p>负责taxonomy与提取pipeline，建立可解释的属性分析体系。</p></div>
+<div class="star-row"><h3>行动 A</h3><p>用GPT-4.1-mini设计evidence-only提取；因情感评分无法区分评级，转向属性标签提取，结合PCA与文本回归验证。</p></div>
+<div class="star-row"><h3>成果 R</h3><p>首个主成分解释约68.5%的方差；分析指向食物与服务执行的区分作用，清洁度呈门槛效应。结果是统计关联，不代表因果。</p></div>
+</div>
 
       <section class="highlights">
         <div class="highlight-grid">
